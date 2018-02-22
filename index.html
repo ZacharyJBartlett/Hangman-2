@@ -8,21 +8,19 @@
     <script>
         var guesses = [];
         $(document).ready(function() {
-            $("input").keypress(function() {
+            $(document).keypress(function(event) {
                 // console.log($("input".value));
-                guesses.push(String.fromCharCode(keypress));
-                console.log(guesses)
+                guesses.push(event.originalEvent.key);
+                console.log(guesses);
             });
         });
-
-        // console.log(guesses[]);
     </script>
 </head>
 
 <body>
     <div>
         <p>hangman body</p>
-        <input type="text">
+
         <p id="guesses"></p>
     </div>
 </body>
