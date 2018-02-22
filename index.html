@@ -9,11 +9,13 @@
         var guesses = [];
         $(document).ready(function() {
             $("input").keypress(function() {
-                console.log($("input".value));
+                // console.log($("input".value));
+                guesses.push(String.fromCharCode(keypress));
+                console.log(guesses[])
             });
         });
-        guesses.push(String.fromCharCode(keypress));
-        console.log(guesses[]);
+
+        // console.log(guesses[]);
     </script>
 </head>
 
