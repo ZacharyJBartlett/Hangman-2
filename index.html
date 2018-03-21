@@ -4,21 +4,8 @@
 <head>
     <meta charset="UTF-8">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <!-- <script type="text/javascript" src="assets/js/hangman.js"></script> -->
-    <script>
-        var words = ["dog", "horse", "alligator"];
-        var guesses = [];
-        $(document).ready(function() {
-            $(document).keypress(function(event) {
-                // console.log($("input".value));
-                guesses.push(event.originalEvent.key);
-                console.log(guesses);
-                $("#guesses").append(event.originalEvent.key);
-            });
-        });
+    <script type="text/javascript" src="assets/js/hangman.js"></script>
 
-        // if guesses.length > 9 .innerHTML
-    </script>
 </head>
 
 <body>
@@ -26,6 +13,8 @@
         <p>hangman body</p>
 
         <p id="guesses"></p>
+        <p id="wins"></p>
+        <p id="losses"></p>
     </div>
 </body>
 
