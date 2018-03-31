@@ -4,17 +4,40 @@ var incorrectGuesses = [];
 var correctGuesses = [];
 $(document).ready(function () {
     $(document).keypress(function (event) {
+        var key = event.originalEvent.key;
         
+        // var testWord = words[Math.floor(words.length * Math.random())];
+        var testWord = words[1];
+        // var split = [];
+        // split.push(testWord); // split adds the values in testWord to split[]
+        var splitWord = testWord.split(''); // ["h", "o", "r", "s","e"];
+        // split.push(splitWord);
+        // console.log(split); // ["horse", ["h", "o", "r", "s","e"]];
+        // for loop to check if keypress event is equal to any character in splitWord
+        for ( i = 0; i < splitWord.length; i++) {
+            
+            var letter = splitWord[i];
+            // letters.push(i);
+            console.log(letter);
+            if (key === letter) {
+                correctGuesses.push(key);
+                console.log(correctGuesses);
+            };
+            if (key != letter) {
+                incorrectGuesses.push(key);
+                console.log(incorrectGuesses);
+            };
+        };
         // check if keypress matches keys in word
         // if matches correctGuesses.push(event.originalEvent.key);
         // if doesnt match incorrectGuesses.push(event.originalEvent.key);
-        guesses.push(event.originalEvent.key);
-        console.log(guesses);
-        $("#guesses").append(event.originalEvent.key);
+        guesses.push(key);
+        // console.log(guesses);
+        $("#guesses").append(key);
 
 
         var lossElement = document.getElementById("losses");
-        if (guesses.length >= 9) {
+        if (incorrectGuesses.length >= 9) {
             guesses = [];
             lossElement.prepend("wow");
             $("#guesses").empty();
